@@ -72,6 +72,12 @@ const ring2 = new THREE.Mesh(ring2Geometry,ring2Material);
 
 scene.add(ring1, ring2);
 
+const body8ringGeometry = new THREE.SphereGeometry(0)
+const body8ringMaterial = new THREE.MeshStandardMaterial({color: 0xffffff});
+const body8orbit = new THREE.Mesh(body8ringGeometry, body8ringMaterial);
+
+scene.add(body8orbit);
+
 ring1.position.z = -30;
 ring1.position.y = -20;
 ring1.position.x = 40;
@@ -196,7 +202,17 @@ const body8 = new THREE.Mesh(
   })
 )
 
-scene.add(body, body2, body3, body4, body5, body6, body7, body8);
+const body9Texture = new THREE.TextureLoader().load('./assets/images/body9map.jpg');
+const body9 = new THREE.Mesh(
+  new THREE.SphereGeometry(200,32,32),
+  new THREE.MeshStandardMaterial( {
+    map: body9Texture,
+  })
+)
+
+scene.add(body, body2, body3, body4, body5, body6, body7, body9);
+
+body8orbit.add(body8);
 
 body.position.z = 20;
 body.position.y =-5;
@@ -223,12 +239,18 @@ body6.position.y = 30;
 body6.position.x = 50;
 
 body7.position.z = -200;
-body7.position.y = 100;
+body7.position.y = 0;
 body7.position.x = -200;
 
-body8.position.z = -200;
-body8.position.y = 50;
-body8.position.x = 170;
+body8orbit.position.z = -200;
+body8orbit.position.y = 90;
+body8orbit.position.x = 110;
+body8.position.x = body8orbit.position.x;
+
+body9.position.z = -500;
+body9.position.y = -100;
+body9.position.x = -400;
+
 
 function onScroll() {
   const t = document.body.getBoundingClientRect().top - 35;
@@ -247,6 +269,11 @@ function onScroll() {
 
   body2.position.x = t * .01 + 20;
   body2.position.y = t * .0005 + 4;
+
+  body9.position.y = t * .001 - 100;
+  body9.position.x = t * -.05 - 300;
+
+  //body7.position.z = t * 0.1 - 200;
 
   spotLight.position.x = t * -.0002;
   spotLight.position.y = t * -.0002;
@@ -299,15 +326,30 @@ function animate() {
   body7.rotation.y += .000025;
   body7.rotation.z += 0.00035;
 
-  ring1.rotateX += .006;
+  ring1.rotation.x += .006;
   ring1.rotation.y += .0003;
 
   ring2.rotation.x += .0001;
   ring2.rotation.y += .0005;
+  
+  body8orbit.rotation.y += .0015;
+  body8orbit.rotation.x -= .0003;
 
+  body8.rotation.x -= 0.00001;
+  body8.rotation.y -= 0.002;
+
+
+  body9.rotation.x += 0.0003;
+  body9.rotation.y += 0.0002;
+  
   controls.update();
 
   renderer.render(scene,camera);
+
+  
+  
+
+  //body8.position.x = Math.cos();
 }
 
 animate();

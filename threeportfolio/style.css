@@ -43,6 +43,7 @@ main {
   margin: 0px auto;
   padding: 120px 0px;
   border-radius: 25px;
+  padding-bottom: 1000px;
 
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -127,4 +128,8 @@ canvas {
 
   .left {
     grid-column: 6 / 12;
+  }
+
+  #end {
+    padding-top: 1000px;
   }
