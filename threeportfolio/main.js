@@ -34,6 +34,7 @@ const torus3material = new THREE.MeshPhongMaterial( {
   color: 0x1E2F1B});
 const torus3knot = new THREE.Mesh(torus3geometry, torus3material);
 
+
 //scene.add(torus1knot, torus2knot, torus3knot);
 
 torus1knot.position.x = -25;
@@ -46,6 +47,27 @@ torus2knot.position.y = -15;
 torus3knot.position.z = 35;
 torus3knot.position.x = 10;
 torus3knot.position.y = 6;
+
+const ring1Geometry = new THREE.RingGeometry(22, 22.8, 30, 30, 0, 6.283185);
+const ring1Material = new THREE.MeshStandardMaterial({color: 0xffffff});
+const ring1 = new THREE.Mesh(ring1Geometry,ring1Material);
+
+const ring2Geometry = new THREE.RingGeometry(23, 23.6, 30, 30, 0, 6.283185);
+const ring2Material = new THREE.MeshStandardMaterial({color: 0xffffff});
+const ring2 = new THREE.Mesh(ring2Geometry,ring2Material);
+
+scene.add(ring1, ring2);
+
+ring1.position.z = -30;
+ring1.position.y = -20;
+ring1.position.x = 40;
+ring1.rotation.x = 1.1;
+
+ring2.position.z = -30;
+ring2.position.y = -20;
+ring2.position.x = 40;
+ring2.rotation.x = .1;
+ring2.rotation.y = .4;
 
 
 const sunLight = new THREE.PointLight(0xffffff, 2);
@@ -106,7 +128,7 @@ const body2 = new THREE.Mesh(
   new THREE.SphereGeometry(2,32,32),
   new THREE.MeshStandardMaterial( {
     map: body2Texture,
-    normalMap: normalTexture
+    
   })
 )
 
@@ -124,7 +146,6 @@ const body4 = new THREE.Mesh(
   new THREE.SphereGeometry(20,32,32),
   new THREE.MeshStandardMaterial( {
     map: body4Texture,
-    normalMap: normalTexture
   })
 )
 
@@ -133,7 +154,7 @@ const body5 = new THREE.Mesh(
   new THREE.SphereGeometry(30,32,32),
   new THREE.MeshStandardMaterial( {
     map: body5Texture,
-    normalMap: normalTexture
+    
   })
 )
 
@@ -142,11 +163,18 @@ const body6 = new THREE.Mesh(
   new THREE.SphereGeometry(50,32,32),
   new THREE.MeshStandardMaterial( {
     map: body6Texture,
-    normalMap: normalTexture
   })
 )
 
-scene.add(body, body2, body3, body4, body5, body6);
+const body7Texture = new THREE.TextureLoader().load('./assets/images/body7map.jpg');
+const body7 = new THREE.Mesh(
+  new THREE.SphereGeometry(100,32,32),
+  new THREE.MeshStandardMaterial( {
+    map: body7Texture,
+  })
+)
+
+scene.add(body, body2, body3, body4, body5, body6, body7);
 
 body.position.z = 20;
 body.position.y =-5;
@@ -171,6 +199,10 @@ body5.position.x = -60;
 body6.position.z = -200;
 body6.position.y = 30;
 body6.position.x = 50;
+
+body7.position.z = -200;
+body7.position.y = 100;
+body7.position.x = -200;
 
 function onScroll() {
   const t = document.body.getBoundingClientRect().top - 35;
@@ -213,25 +245,39 @@ function animate() {
   // torus3knot.rotation.y += .007;
   // torus3knot.rotation.z += .01;
 
-  body.rotation.x += .001;
-  body.rotation.y += .002;
-  body.rotation.z += .001;
+  body.rotation.x += .0002;
+  body.rotation.y += .0001;
+  body.rotation.z += .0003;
 
-  body2.rotation.x += .001;
-  body2.rotation.y += .003;
+  body2.rotation.x += .0001;
+  body2.rotation.y += .0003;
   body2.rotation.z += 0;
 
   body3.rotation.x += .0005;
-  body3.rotation.y += .001;
-  body3.rotation.z += 0.002;
+  body3.rotation.y += .0004;
+  body3.rotation.z += 0.001;
 
-  body4.rotation.x += .0005;
+  body4.rotation.x += .0002;
   // body4.rotation.y += .001;
   // body4.rotation.z += 0.002;
+
+  body5.rotation.x -= .0001;
+  body5.rotation.y -= .0002;
+  // body5.rotation.z += 0.002;
   
-  body6.rotation.x += .0005;
+  body6.rotation.x += .0002;
   body6.rotation.y += .0001;
   body6.rotation.z += 0.0002;
+
+  body7.rotation.x += .00005;
+  body7.rotation.y += .00002;
+  body7.rotation.z += 0.0001;
+
+  ring1.rotation.x += .0002;
+  ring1.rotation.y += .0003;
+
+  ring2.rotation.x += .0004;
+  ring2.rotation.y += .0001;
 
   controls.update();
 
