@@ -48,12 +48,12 @@ torus3knot.position.z = 35;
 torus3knot.position.x = 10;
 torus3knot.position.y = 6;
 
-const ring1Geometry = new THREE.RingGeometry(22, 22.8, 30, 30, 0, 6.283185);
-const ring1Material = new THREE.MeshStandardMaterial({color: 0xffffff});
+const ring1Geometry = new THREE.RingGeometry(22, 22.4, 30, 30, 0, 6.283185);
+const ring1Material = new THREE.MeshBasicMaterial({color: 0xADD8E6, wireframe: true});
 const ring1 = new THREE.Mesh(ring1Geometry,ring1Material);
 
-const ring2Geometry = new THREE.RingGeometry(23, 23.6, 30, 30, 0, 6.283185);
-const ring2Material = new THREE.MeshStandardMaterial({color: 0xffffff});
+const ring2Geometry = new THREE.RingGeometry(23, 23.3, 30, 30, 0, 6.283185);
+const ring2Material = new THREE.MeshBasicMaterial({color: 0x90EE90, wireframe: true});
 const ring2 = new THREE.Mesh(ring2Geometry,ring2Material);
 
 scene.add(ring1, ring2);
@@ -174,7 +174,15 @@ const body7 = new THREE.Mesh(
   })
 )
 
-scene.add(body, body2, body3, body4, body5, body6, body7);
+const body8Texture = new THREE.TextureLoader().load('./assets/images/body8map.png');
+const body8 = new THREE.Mesh(
+  new THREE.SphereGeometry(15,32,32),
+  new THREE.MeshStandardMaterial( {
+    map: body8Texture,
+  })
+)
+
+scene.add(body, body2, body3, body4, body5, body6, body7, body8);
 
 body.position.z = 20;
 body.position.y =-5;
@@ -203,6 +211,10 @@ body6.position.x = 50;
 body7.position.z = -200;
 body7.position.y = 100;
 body7.position.x = -200;
+
+body8.position.z = -200;
+body8.position.y = 50;
+body8.position.x = 170;
 
 function onScroll() {
   const t = document.body.getBoundingClientRect().top - 35;
@@ -247,7 +259,7 @@ function animate() {
 
   body.rotation.x += .0002;
   body.rotation.y += .0001;
-  body.rotation.z += .0003;
+  body.rotation.z += .00003;
 
   body2.rotation.x += .0001;
   body2.rotation.y += .0003;
@@ -262,22 +274,22 @@ function animate() {
   // body4.rotation.z += 0.002;
 
   body5.rotation.x -= .0001;
-  body5.rotation.y -= .0002;
+  body5.rotation.y -= .00002;
   // body5.rotation.z += 0.002;
   
-  body6.rotation.x += .0002;
+  body6.rotation.x += .00002;
   body6.rotation.y += .0001;
   body6.rotation.z += 0.0002;
 
-  body7.rotation.x += .00005;
-  body7.rotation.y += .00002;
+  body7.rotation.x += .00003;
+  body7.rotation.y += .0000;
   body7.rotation.z += 0.0001;
 
-  ring1.rotation.x += .0002;
+  ring1.rotateX += .006;
   ring1.rotation.y += .0003;
 
-  ring2.rotation.x += .0004;
-  ring2.rotation.y += .0001;
+  ring2.rotation.x += .0001;
+  ring2.rotation.y += .0005;
 
   controls.update();
 
