@@ -245,33 +245,33 @@ function animate() {
   // torus3knot.rotation.y += .007;
   // torus3knot.rotation.z += .01;
 
-  body.rotation.x += .0002;
-  body.rotation.y += .0001;
-  body.rotation.z += .0003;
+  body.rotation.x += .00035;
+  body.rotation.y += .00025;
+  body.rotation.z += .00035;
 
-  body2.rotation.x += .0001;
-  body2.rotation.y += .0003;
+  body2.rotation.x += .00025;
+  body2.rotation.y += .00035;
   body2.rotation.z += 0;
 
-  body3.rotation.x += .0005;
-  body3.rotation.y += .0004;
-  body3.rotation.z += 0.001;
+  body3.rotation.x += .00055;
+  body3.rotation.y += .0005;
+  body3.rotation.z += 0.0015;
 
-  body4.rotation.x += .0002;
+  body4.rotation.x += .00025;
   // body4.rotation.y += .001;
   // body4.rotation.z += 0.002;
 
-  body5.rotation.x -= .0001;
-  body5.rotation.y -= .0002;
+  body5.rotation.x -= .00035;
+  body5.rotation.y -= .00025;
   // body5.rotation.z += 0.002;
   
-  body6.rotation.x += .0002;
-  body6.rotation.y += .0001;
-  body6.rotation.z += 0.0002;
+  body6.rotation.x += .00025;
+  body6.rotation.y += .00025;
+  body6.rotation.z += 0.00025;
 
-  body7.rotation.x += .00005;
-  body7.rotation.y += .00002;
-  body7.rotation.z += 0.0001;
+  body7.rotation.x += .000065;
+  body7.rotation.y += .000025;
+  body7.rotation.z += 0.00035;
 
   ring1.rotation.x += .0002;
   ring1.rotation.y += .0003;
