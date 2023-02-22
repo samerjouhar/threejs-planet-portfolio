@@ -271,15 +271,9 @@ function animate() {
   // torus3knot.rotation.y += .007;
   // torus3knot.rotation.z += .01;
 
-<<<<<<< HEAD
-  body.rotation.x += .0002;
-  body.rotation.y += .0001;
-  body.rotation.z += .00003;
-=======
   body.rotation.x += .00035;
   body.rotation.y += .00025;
   body.rotation.z += .00035;
->>>>>>> 6674e66e8e56028fab4610d2581cde76e6c59d34
 
   body2.rotation.x += .00025;
   body2.rotation.y += .00035;
@@ -293,19 +287,6 @@ function animate() {
   // body4.rotation.y += .001;
   // body4.rotation.z += 0.002;
 
-<<<<<<< HEAD
-  body5.rotation.x -= .0001;
-  body5.rotation.y -= .00002;
-  // body5.rotation.z += 0.002;
-  
-  body6.rotation.x += .00002;
-  body6.rotation.y += .0001;
-  body6.rotation.z += 0.0002;
-
-  body7.rotation.x += .00003;
-  body7.rotation.y += .0000;
-  body7.rotation.z += 0.0001;
-=======
   body5.rotation.x -= .00035;
   body5.rotation.y -= .00025;
   // body5.rotation.z += 0.002;
@@ -317,7 +298,6 @@ function animate() {
   body7.rotation.x += .000065;
   body7.rotation.y += .000025;
   body7.rotation.z += 0.00035;
->>>>>>> 6674e66e8e56028fab4610d2581cde76e6c59d34
 
   ring1.rotateX += .006;
   ring1.rotation.y += .0003;
