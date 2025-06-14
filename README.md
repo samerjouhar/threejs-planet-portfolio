@@ -30,7 +30,9 @@ A modern portfolio website built with Three.js and vanilla JavaScript, featuring
    ```
 
 3. Install dependencies and start the development server:
-bashnpm install
-npm run dev
+   ```bash
+   npm install
+   npm run dev
+   ```
 
-4. Visit the URL shown in your terminal (typically http://localhost:5173)
+4. Visit the URL shown in your terminal (typically `http://localhost:5173`)
