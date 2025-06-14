@@ -242,9 +242,6 @@ body9.position.x = -400;
 
 function onScroll() {
   const t = document.body.getBoundingClientRect().top - 35;
-  body.rotation.z += .007
-
-  body2.rotation.x += .004
 
   torus3knot.position.x = -105 - t * .03;
   torus3knot.position.z = 120 + t * .03;
@@ -273,45 +270,45 @@ document.body.onscroll = onScroll;
 function animate() {
   requestAnimationFrame(animate);
 
-  body.rotation.x += .0007;
-  body.rotation.y += .0005;
-  body.rotation.z += .0007;
+  body.rotation.x += .00035;
+  body.rotation.y += .00025;
+  body.rotation.z += .00035;
 
-  body2.rotation.x += .0005;
-  body2.rotation.y += .0007;
+  body2.rotation.x += .00025;
+  body2.rotation.y += .00035;
   body2.rotation.z += 0;
 
-  body3.rotation.x += .0011;
-  body3.rotation.y += .001;
-  body3.rotation.z += .003;
+  body3.rotation.x += .00055;
+  body3.rotation.y += .0005;
+  body3.rotation.z += .0015;
 
-  body4.rotation.x += .0005;
+  body4.rotation.x += .00025;
 
-  body5.rotation.x -= .0007;
-  body5.rotation.y -= .0005;
+  body5.rotation.x -= .00035;
+  body5.rotation.y -= .00025;
   
-  body6.rotation.x += .0005;
-  body6.rotation.y += .0005;
-  body6.rotation.z += .0005;
+  body6.rotation.x += .00025;
+  body6.rotation.y += .00025;
+  body6.rotation.z += .00025;
 
-  body7.rotation.x += .00013;
-  body7.rotation.y += .00005;
-  body7.rotation.z += .0007;
+  body7.rotation.x += .000065;
+  body7.rotation.y += .000025;
+  body7.rotation.z += .00035;
 
-  ring1.rotation.x += .012;
-  ring1.rotation.y += .0006;
+  ring1.rotation.x += .006;
+  ring1.rotation.y += .0003;
 
-  ring2.rotation.x += .0002;
-  ring2.rotation.y += .001;
+  ring2.rotation.x += .0001;
+  ring2.rotation.y += .0005;
   
-  body8orbit.rotation.y += .0015;
-  body8orbit.rotation.x -= .0003;
+  body8orbit.rotation.y += .00075;
+  body8orbit.rotation.x -= .00015;
 
-  body8.rotation.x -= 0.00002;
-  body8.rotation.y -= 0.004;
+  body8.rotation.x -= 0.00001;
+  body8.rotation.y -= 0.002;
 
-  body9.rotation.x += 0.0006;
-  body9.rotation.y += 0.0004;
+  body9.rotation.x += 0.0003;
+  body9.rotation.y += 0.0002;
   
   controls.update();
 
